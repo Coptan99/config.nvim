@@ -8,9 +8,6 @@ return {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 			{ "j-hui/fidget.nvim", opts = {} },
-
-			-- Autoformatting
-			"stevearc/conform.nvim",
 		},
 		config = function()
 			require("neodev").setup({
@@ -96,23 +93,6 @@ return {
 					if disable_semantic_tokens[filetype] then
 						client.server_capabilities.semanticTokensProvider = nil
 					end
-				end,
-			})
-
-			-- Autoformatting Setup
-			require("conform").setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-				},
-			})
-
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				callback = function(args)
-					require("conform").format({
-						bufnr = args.buf,
-						lsp_fallback = true,
-						quiet = true,
-					})
 				end,
 			})
 		end,
