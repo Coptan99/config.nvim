@@ -2,11 +2,11 @@
 
 return {
   {
-    "tjdevries/colorbuddy.nvim",
-    lazy = false,
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme "gruvbuddy"
+      vim.cmd.colorscheme "catppuccin-mocha"
     end,
-  },
+  }
 }
