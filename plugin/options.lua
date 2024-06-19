@@ -26,6 +26,7 @@ opt.undofile = true
 ----- Personal Preferences -----
 opt.number = true
 opt.relativenumber = true
+opt.cursorline = true
 
 opt.splitbelow = true
 opt.splitright = true
